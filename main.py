@@ -28,7 +28,7 @@ stock_params = {
     "apikey": stock_api_key,
     "interval": '60min'
 }
-TOKEN = '5660644320:AAFO7gF3DsDnXYbfRlgGnP6Y79aAx5BKfyY'
+TOKEN = BOT_TOKEN
 
 bot = Bot(TOKEN)
 dp = Dispatcher(bot=bot)
@@ -40,7 +40,7 @@ async def start_handler(message: types.Message):
     logging.info(f'{user_id} {user_full_name} {time.asctime()}')
     await message.reply(f"Привет {user_full_name}")
     while True:
-        await asyncio.sleep(60*60*24)
+        await asyncio.sleep(10)
         today = str(date.today()).split('-')
         yesterday = f"{today[0]}-{today[1]}-{str(int(today[2]) - 1)} 20:00:00"
         pre_yesterday = f"{today[0]}-{today[1]}-{str(int(today[2]) - 2)} 20:00:00"
